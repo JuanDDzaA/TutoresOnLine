@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel del tutor · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="panel-tutor.html"><span class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" fill="#1c3336"/><path d="M6 12v4c0 1.5 3 3 6 3s6-1.5 6-3v-4l-6 3-6-3z" fill="#1c3336"/></svg></span>TutoresOn-Line</a>
+    <nav aria-label="Principal">
+      <a href="panel-tutor.html" aria-current="page">Panel</a>
+      <a href="disponibilidad.html">Disponibilidad</a>
+      <a href="ia.html">Asistente IA</a>
+      <a href="login.html" data-salir>Salir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <h1>Solicitudes pendientes</h1>
+  <p id="mensaje" class="aviso" role="status" aria-live="polite" hidden></p>
+  <div id="pendientes"></div>
+
+  <h2>Próximas sesiones confirmadas</h2>
+  <div id="confirmadas"></div>
+
+  <div class="stats">
+    <div class="stat"><b id="st-rep">—</b><span>Reputación</span></div>
+    <div class="stat"><b id="st-ses">0</b><span>Sesiones dictadas</span></div>
+    <div class="stat"><b id="st-ing">$0</b><span>Ingresos del mes</span></div>
+  </div>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script>
+<script src="js/repositorio.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/paginas/panel-tutor.js"></script>
+</body>
+</html>

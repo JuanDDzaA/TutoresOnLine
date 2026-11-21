@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi disponibilidad · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="panel-tutor.html"><span class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" fill="#1c3336"/><path d="M6 12v4c0 1.5 3 3 6 3s6-1.5 6-3v-4l-6 3-6-3z" fill="#1c3336"/></svg></span>TutoresOn-Line</a>
+    <nav aria-label="Principal">
+      <a href="panel-tutor.html">Panel</a>
+      <a href="disponibilidad.html" aria-current="page">Disponibilidad</a>
+      <a href="ia.html">Asistente IA</a>
+      <a href="login.html" data-salir>Salir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <div class="cabecera">
+    <span class="avatar grande" id="avatar" aria-hidden="true"></span>
+    <div>
+      <h1 id="nombre">Mi perfil</h1>
+      <p class="muted" id="subtitulo"></p>
+    </div>
+  </div>
+  <p id="mensaje" class="aviso" role="status" aria-live="polite" hidden></p>
+  <form id="form-disp">
+    <h2>Mis datos de tutor</h2>
+    <label class="sr" for="materias">Materias que dictas</label>
+    <input type="text" id="materias" name="materias" placeholder="Materias, separadas por coma" required>
+    <label class="sr" for="ciudad">Ciudad</label>
+    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad (para clases presenciales)">
+    <label class="sr" for="tarifa">Tarifa por hora</label>
+    <input type="number" id="tarifa" name="tarifa" min="0" step="1000" placeholder="Tarifa por hora (COP)" required>
+
+    <h2>Niveles y modalidad</h2>
+    <div class="chips"><span class="chip-check"><input type="checkbox" name="nivel" id="n-primaria" value="Primaria"><label for="n-primaria">Primaria</label></span><span class="chip-check"><input type="checkbox" name="nivel" id="n-bachillerato" value="Bachillerato"><label for="n-bachillerato">Bachillerato</label></span><span class="chip-check"><input type="checkbox" name="nivel" id="n-universitario" value="Universitario"><label for="n-universitario">Universitario</label></span>
+      <span class="chip-check"><input type="checkbox" name="virtual" id="m-virtual"><label for="m-virtual">Virtual</label></span>
+      <span class="chip-check"><input type="checkbox" name="presencial" id="m-presencial"><label for="m-presencial">Presencial</label></span>
+    </div>
+    <div class="chips"><span class="chip-check"><input type="checkbox" name="ahora" id="m-ahora"><label for="m-ahora">Disponible ahora (recibir solicitudes inmediatas)</label></span></div>
+
+    <h2>Mi disponibilidad semanal</h2>
+    <div class="tabla-wrap">
+      <table>
+        <tr>
+          <th></th>
+          <th scope="col" title="lunes">L</th>
+          <th scope="col" title="martes">M</th>
+          <th scope="col" title="miércoles">X</th>
+          <th scope="col" title="jueves">J</th>
+          <th scope="col" title="viernes">V</th>
+          <th scope="col" title="sábado">S</th>
+          <th scope="col" title="domingo">D</th>
+        </tr>
+        <tr>
+          <td>Mañana</td>
+          <td><input type="checkbox" name="manana" value="0" aria-label="Mañana lunes"></td>
+          <td><input type="checkbox" name="manana" value="1" aria-label="Mañana martes"></td>
+          <td><input type="checkbox" name="manana" value="2" aria-label="Mañana miércoles"></td>
+          <td><input type="checkbox" name="manana" value="3" aria-label="Mañana jueves"></td>
+          <td><input type="checkbox" name="manana" value="4" aria-label="Mañana viernes"></td>
+          <td><input type="checkbox" name="manana" value="5" aria-label="Mañana sábado"></td>
+          <td><input type="checkbox" name="manana" value="6" aria-label="Mañana domingo"></td>
+        </tr>
+        <tr>
+          <td>Tarde</td>
+          <td><input type="checkbox" name="tarde" value="0" aria-label="Tarde lunes"></td>
+          <td><input type="checkbox" name="tarde" value="1" aria-label="Tarde martes"></td>
+          <td><input type="checkbox" name="tarde" value="2" aria-label="Tarde miércoles"></td>
+          <td><input type="checkbox" name="tarde" value="3" aria-label="Tarde jueves"></td>
+          <td><input type="checkbox" name="tarde" value="4" aria-label="Tarde viernes"></td>
+          <td><input type="checkbox" name="tarde" value="5" aria-label="Tarde sábado"></td>
+          <td><input type="checkbox" name="tarde" value="6" aria-label="Tarde domingo"></td>
+        </tr>
+      </table>
+    </div>
+    <p class="muted" style="margin:8px 0 16px">Mañana = sesión a las 9:00 a.m. · Tarde = sesión a las 3:00 p.m. Toca una casilla para activar o desactivar esa franja.</p>
+    <button class="btn" type="submit">Guardar disponibilidad</button>
+  </form>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script>
+<script src="js/repositorio.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/paginas/disponibilidad.js"></script>
+</body>
+</html>

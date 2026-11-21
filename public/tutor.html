@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservar tutoría · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="buscar.html"><span class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" fill="#1c3336"/><path d="M6 12v4c0 1.5 3 3 6 3s6-1.5 6-3v-4l-6 3-6-3z" fill="#1c3336"/></svg></span>TutoresOn-Line</a>
+    <nav aria-label="Principal">
+      <a href="buscar.html" aria-current="page">Buscar</a>
+      <a href="mis-tutorias.html">Mis tutorías</a>
+      <a href="ia.html">Asistente IA</a>
+      <a href="login.html" data-salir>Salir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <p class="volver"><a href="buscar.html">‹ Volver a resultados</a></p>
+  <p id="mensaje" class="aviso" role="status" aria-live="polite" hidden></p>
+  <div id="perfil" hidden>
+    <div class="cabecera">
+      <span class="avatar grande" id="avatar" aria-hidden="true"></span>
+      <div>
+        <h1 id="nombre"></h1>
+        <p class="muted" id="reputacion"></p>
+      </div>
+    </div>
+    <p class="muted" id="detalle"></p>
+    <p id="bio" style="margin-top:8px"></p>
+
+    <form id="form-reserva">
+      <h2 id="t-materia">Materia</h2>
+      <label class="sr" for="materia">Materia</label>
+      <select id="materia" name="materia" required></select>
+
+      <h2 id="t-modalidad">Modalidad</h2>
+      <div class="chips" role="radiogroup" aria-labelledby="t-modalidad" id="modalidades"></div>
+
+      <h2 id="t-franjas">Franjas disponibles — próximos 14 días</h2>
+      <div class="franjas" role="radiogroup" aria-labelledby="t-franjas" id="franjas"></div>
+
+      <div class="resumen" aria-live="polite">
+        <small>Resumen de la reserva</small>
+        <b id="resumen-txt">Elige una franja</b>
+      </div>
+      <button class="btn" type="submit" id="btn-reservar">Confirmar y reservar</button>
+    </form>
+
+    <h2>Reseñas recientes</h2>
+    <div class="lista-resenas" id="resenas"></div>
+  </div>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script>
+<script src="js/repositorio.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/paginas/tutor.js"></script>
+</body>
+</html>

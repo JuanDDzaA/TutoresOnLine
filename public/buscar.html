@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscar tutores · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="buscar.html"><span class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" fill="#1c3336"/><path d="M6 12v4c0 1.5 3 3 6 3s6-1.5 6-3v-4l-6 3-6-3z" fill="#1c3336"/></svg></span>TutoresOn-Line</a>
+    <nav aria-label="Principal">
+      <a href="buscar.html" aria-current="page">Buscar</a>
+      <a href="mis-tutorias.html">Mis tutorías</a>
+      <a href="ia.html">Asistente IA</a>
+      <a href="login.html" data-salir>Salir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <h1>Encuentra tu tutor</h1>
+  <form id="filtros" class="filtros" onsubmit="return false">
+    <label class="sr" for="f-texto">Buscar por nombre o materia</label>
+    <input class="ancho" type="text" id="f-texto" placeholder="Buscar por nombre o materia">
+    <label class="sr" for="f-materia">Materia</label>
+    <select id="f-materia"><option value="">Todas las materias</option></select>
+    <label class="sr" for="f-nivel">Nivel educativo</label>
+    <select id="f-nivel"><option value="">Todos los niveles</option><option value="Primaria">Primaria</option><option value="Bachillerato">Bachillerato</option><option value="Universitario">Universitario</option></select>
+    <label class="sr" for="f-ciudad">Área geográfica</label>
+    <select id="f-ciudad"><option value="">Todas las zonas</option></select>
+    <label class="sr" for="f-modalidad">Modalidad</label>
+    <select id="f-modalidad"><option value="">Virtual o presencial</option><option value="virtual">Virtual</option><option value="presencial">Presencial</option></select>
+    <label class="sr" for="f-dia">Día disponible</label>
+    <select id="f-dia"><option value="">Cualquier día</option><option value="0">Lunes</option><option value="1">Martes</option><option value="2">Miércoles</option><option value="3">Jueves</option><option value="4">Viernes</option><option value="5">Sábado</option><option value="6">Domingo</option></select>
+    <div class="chips ancho"><span class="chip-check"><input type="checkbox" id="f-ahora"><label for="f-ahora">Disponibles ahora</label></span></div>
+  </form>
+  <p class="muted" id="conteo" aria-live="polite"></p>
+  <div id="resultados"></div>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script>
+<script src="js/repositorio.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/paginas/buscar.js"></script>
+</body>
+</html>

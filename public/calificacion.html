@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutoría · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="login.html"><span class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" fill="#1c3336"/><path d="M6 12v4c0 1.5 3 3 6 3s6-1.5 6-3v-4l-6 3-6-3z" fill="#1c3336"/></svg></span>TutoresOn-Line</a>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <h1 id="titulo">Tutoría</h1>
+  <p class="muted" id="detalle"></p>
+  <p id="mensaje" class="aviso" role="status" aria-live="polite" hidden></p>
+  <div class="video" id="video" role="region" aria-label="Videollamada"></div>
+
+  <form id="form-calif" hidden>
+    <h2 id="t-calif">Al finalizar: califica esta tutoría</h2>
+    <div class="calif" role="radiogroup" aria-labelledby="t-calif">
+      <input type="radio" name="estrellas" id="e5" value="5" required>
+      <label for="e5"><span class="sr">5 estrellas</span>★</label>
+      <input type="radio" name="estrellas" id="e4" value="4">
+      <label for="e4"><span class="sr">4 estrellas</span>★</label>
+      <input type="radio" name="estrellas" id="e3" value="3">
+      <label for="e3"><span class="sr">3 estrellas</span>★</label>
+      <input type="radio" name="estrellas" id="e2" value="2">
+      <label for="e2"><span class="sr">2 estrellas</span>★</label>
+      <input type="radio" name="estrellas" id="e1" value="1">
+      <label for="e1"><span class="sr">1 estrella</span>★</label>
+    </div>
+    <label class="sr" for="comentario">Comentario opcional</label>
+    <input type="text" id="comentario" name="comentario" maxlength="300" placeholder="Comentario opcional...">
+    <button class="btn" type="submit">Enviar calificación</button>
+  </form>
+  <p class="centro" id="volver-tutor" hidden style="margin-top:16px"><a class="btn-out" href="panel-tutor.html">Volver al panel</a></p>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script>
+<script src="js/repositorio.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/paginas/sesion.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asistente IA · TutoresOn-Line</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html"><span class="logo" aria-hidden="true">✦</span>TutoresOn-Line</a>
+</div></header>
+<main>
+<div class="card">
+  <h1>Asistente académico con IA <span class="ia-destacado">NUEVO</span></h1>
+  <p class="muted">Pregunta lo que necesites. La IA te explica temas, prepara ejercicios o te ayuda a repasar antes de una tutoría.</p>
+  <form id="form-ia">
+    <div class="ia-controles">
+      <label>Materia
+        <select id="ia-materia" required>
+          <option>Matemáticas</option><option>Física</option><option>Programación</option>
+          <option>Inglés</option><option>Química</option><option>Historia</option><option>Otra materia</option>
+        </select>
+      </label>
+      <label>Nivel educativo
+        <select id="ia-nivel" required><option>Primaria</option><option selected>Bachillerato</option><option>Universitario</option></select>
+      </label>
+      <label>¿Qué necesitas?
+        <select id="ia-tipo" required><option value="explicar">Explicación paso a paso</option><option value="ejercicio">Ejercicio con solución</option><option value="repasar">Resumen de repaso</option></select>
+      </label>
+    </div>
+    <label for="ia-pregunta" class="ia-label">Escribe tu pregunta</label>
+    <textarea id="ia-pregunta" rows="4" minlength="5" maxlength="1200" required placeholder="Ejemplo: ¿Cómo resuelvo ecuaciones de segundo grado?"></textarea>
+    <label for="ia-codigo" class="ia-label">Código de acceso a IA <span class="muted">(solo para la demostración; si tu sesión Supabase está habilitada, puedes dejarlo vacío)</span></label>
+    <input type="password" id="ia-codigo" maxlength="100" autocomplete="off" placeholder="Código facilitado por el equipo">
+    <div class="ia-acciones"><button class="btn-sm" id="ia-enviar" type="submit">Generar respuesta con IA</button>
+      <button class="btn-out" id="ia-limpiar" type="button">Limpiar conversación</button></div>
+    <p id="ia-estado" class="aviso" aria-live="polite" hidden></p>
+  </form>
+  <section aria-labelledby="ia-titulo-respuestas" class="ia-seccion">
+    <h2 id="ia-titulo-respuestas">Conversación</h2>
+    <div id="ia-historial" class="ia-historial" role="log" aria-live="polite" aria-relevant="additions">
+      <p class="muted" id="ia-inicio">Tu primera respuesta aparecerá aquí. Selecciona una materia y haz una pregunta.</p>
+    </div>
+  </section>
+  <p class="muted ia-nota">La IA puede equivocarse. Verifica las respuestas importantes con tu tutor. No escribas información personal ni contraseñas.</p>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/nucleo.js"></script><script src="js/repo-local.js"></script>
+<script src="js/repo-supabase.js"></script><script src="js/repositorio.js"></script><script src="js/servicios.js"></script>
+<script src="js/paginas/ia.js"></script>
+</body>
+</html>
